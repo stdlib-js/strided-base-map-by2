@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/strided-base-map-by2",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Apply a binary function to each pair of elements retrieved from strided input arrays according to a callback function and assign results to a strided output array.",
   "license": "Apache-2.0",
   "author": {
