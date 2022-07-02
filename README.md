@@ -32,30 +32,20 @@ limitations under the License.
 
 <!-- /.intro -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/strided-base-map-by2
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-var mapBy2 = require( '@stdlib/strided-base-map-by2' );
+import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@esm/index.mjs';
+```
+
+You can also import the following named exports from the package:
+
+```javascript
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@esm/index.mjs';
 ```
 
 #### mapBy2( N, x, strideX, y, strideY, z, strideZ, fcn, clbk\[, thisArg] )
@@ -63,7 +53,7 @@ var mapBy2 = require( '@stdlib/strided-base-map-by2' );
 Applies a binary function to each pair of elements retrieved from strided input arrays according to a callback function and assigns results to a strided output array.
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
 
 function accessor( vx, vy ) {
     return [ vx*2.0, vy*2.0 ];
@@ -105,7 +95,7 @@ The invoked callback function is provided nine arguments:
 To set the callback execution context, provide a `thisArg`.
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
 
 function accessor( vx, vy ) {
     this.count += 1;
@@ -130,7 +120,7 @@ var cnt = context.count;
 The `N` and `stride` parameters determine which elements in the strided arrays are accessed at runtime. For example, to index every other value in `x` and to index the first `N` elements of `y` in reverse order,
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
 
 function accessor( vx, vy ) {
     return [ vx*2.0, vy*2.0 ];
@@ -147,8 +137,8 @@ mapBy2( 3, x, 2, y, -1, z, 1, add, accessor );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
 
 ```javascript
-var Float64Array = require( '@stdlib/array-float64' );
-var add = require( '@stdlib/math-base-ops-add' );
+import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
+import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
 
 function accessor( vx, vy ) {
     return [ vx*2.0, vy*2.0 ];
@@ -173,7 +163,7 @@ mapBy2( 3, x1, -2, y1, 1, z1, 1, add, accessor );
 Applies a binary function to each pair of elements retrieved from strided input arrays according to a callback function and assigns results to a strided output array using alternative indexing semantics.
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
 
 function accessor( vx, vy ) {
     return [ vx*2.0, vy*2.0 ];
@@ -196,7 +186,7 @@ The function accepts the following additional arguments:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the offset parameters support indexing semantics based on starting indices. For example, to index every other value in `x` starting from the second value and to index the last `N` elements in `y` in reverse order,
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
 
 function accessor( vx, vy ) {
     return [ vx*2.0, vy*2.0 ];
@@ -221,7 +211,7 @@ mapBy2.ndarray( 3, x, 2, 1, y, -1, y.length-1, z, 1, 3, add, accessor );
 -   If a provided callback function does not return any value (or equivalently, explicitly returns `undefined`), the value is **ignored**.
 
     ```javascript
-    var add = require( '@stdlib/math-base-ops-add' );
+    import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
 
     function accessor() {
         // No-op...
@@ -245,12 +235,17 @@ mapBy2.ndarray( 3, x, 2, 1, y, -1, y.length-1, z, 1, 3, add, accessor );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
-var filledarray = require( '@stdlib/array-filled' );
-var filledarrayBy = require( '@stdlib/array-filled-by' );
-var add = require( '@stdlib/math-base-ops-add' );
-var mapBy2 = require( '@stdlib/strided-base-map-by2' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="module">
+
+var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
+import filledarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@esm/index.mjs';
+import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
+import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
+import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@esm/index.mjs';
 
 function accessor( vx, vy, i ) {
     if ( (i%3) === 0 ) {
@@ -271,6 +266,10 @@ console.log( z );
 
 mapBy2.ndarray( x.length, x, 1, 0, y, -1, y.length-1, z, 1, 0, add, accessor );
 console.log( z );
+
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -294,7 +293,7 @@ console.log( z );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
