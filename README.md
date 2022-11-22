@@ -65,8 +65,10 @@ Applies a binary function to each pair of elements retrieved from strided input 
 ```javascript
 var add = require( '@stdlib/math-base-ops-add' );
 
-function accessor( vx, vy ) {
-    return [ vx*2.0, vy*2.0 ];
+function accessor( values ) {
+    values[ 0 ] *= 2.0;
+    values[ 1 ] *= 2.0;
+    return values;
 }
 
 var x = [ -2.0, 1.0, 3.0, -5.0, 4.0, 0.0, -1.0, -3.0 ];
@@ -90,26 +92,23 @@ The function accepts the following arguments:
 -   **clbk**: callback function which returns an array-like object containing two values.
 -   **thisArg**: execution context (_optional_).
 
-The invoked callback function is provided nine arguments:
+The invoked callback function is provided four arguments:
 
--   **vx**: input array element.
--   **vy**: input array element.
+-   **values**: input array element values `[vx, vy]`.
 -   **idx**: iteration index (zero-based).
--   **ix**: input array strided index (`offsetX + idx*strideX`).
--   **iy**: input array strided index (`offsetY + idx*strideY`).
--   **iz**: output array strided index (`offsetZ + idx*strideZ`).
--   **x**: input array/collection.
--   **y**: input array/collection.
--   **z**: output array/collection.
+-   **indices**: input and output array strided indices `[ix, iy, iz]` (computed according to `offset + idx*stride`).
+-   **arrays**: input and output arrays/collections `[x, y, z]`.
 
 To set the callback execution context, provide a `thisArg`.
 
 ```javascript
 var add = require( '@stdlib/math-base-ops-add' );
 
-function accessor( vx, vy ) {
+function accessor( values ) {
     this.count += 1;
-    return [ vx*2.0, vy*2.0 ];
+    values[ 0 ] *= 2.0;
+    values[ 1 ] *= 2.0;
+    return values;
 }
 
 var context = {
@@ -132,8 +131,10 @@ The `N` and `stride` parameters determine which elements in the strided arrays a
 ```javascript
 var add = require( '@stdlib/math-base-ops-add' );
 
-function accessor( vx, vy ) {
-    return [ vx*2.0, vy*2.0 ];
+function accessor( values ) {
+    values[ 0 ] *= 2.0;
+    values[ 1 ] *= 2.0;
+    return values;
 }
 
 var x = [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ];
@@ -150,8 +151,10 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 var Float64Array = require( '@stdlib/array-float64' );
 var add = require( '@stdlib/math-base-ops-add' );
 
-function accessor( vx, vy ) {
-    return [ vx*2.0, vy*2.0 ];
+function accessor( values ) {
+    values[ 0 ] *= 2.0;
+    values[ 1 ] *= 2.0;
+    return values;
 }
 
 // Initial arrays...
@@ -175,8 +178,10 @@ Applies a binary function to each pair of elements retrieved from strided input 
 ```javascript
 var add = require( '@stdlib/math-base-ops-add' );
 
-function accessor( vx, vy ) {
-    return [ vx*2.0, vy*2.0 ];
+function accessor( values ) {
+    values[ 0 ] *= 2.0;
+    values[ 1 ] *= 2.0;
+    return values;
 }
 
 var x = [ -1.0, -2.0, -3.0, -4.0, -5.0 ];
@@ -198,8 +203,10 @@ While [`typed array`][mdn-typed-array] views mandate a view offset based on the 
 ```javascript
 var add = require( '@stdlib/math-base-ops-add' );
 
-function accessor( vx, vy ) {
-    return [ vx*2.0, vy*2.0 ];
+function accessor( values ) {
+    values[ 0 ] *= 2.0;
+    values[ 1 ] *= 2.0;
+    return values;
 }
 
 var x = [ -1.0, -2.0, -3.0, -4.0, -5.0, -6.0 ];
@@ -252,12 +259,12 @@ var filledarrayBy = require( '@stdlib/array-filled-by' );
 var add = require( '@stdlib/math-base-ops-add' );
 var mapBy2 = require( '@stdlib/strided-base-map-by2' );
 
-function accessor( vx, vy, i ) {
+function accessor( values, i ) {
     if ( (i%3) === 0 ) {
         // Simulate a "missing" value...
         return;
     }
-    return [ vx, vy ];
+    return values;
 }
 
 var x = filledarrayBy( 10, 'generic', discreteUniform( -100, 100 ) );
