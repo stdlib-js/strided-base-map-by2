@@ -44,7 +44,8 @@
     "@stdlib/array-base-setter": "^0.0.1",
     "@stdlib/array-dtype": "^0.0.6",
     "@stdlib/types": "^0.0.14",
-    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.0.7"
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.0.7",
+    "@stdlib/error-tools-fmtprodmsg": "^0.0.2"
   },
   "devDependencies": {
     "@stdlib/array-complex128": "^0.0.6",
