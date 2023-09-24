@@ -50,13 +50,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@deno/mod.js';
+import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@deno/mod.js';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@v0.1.0-deno/mod.js';
 ```
 
 #### mapBy2( N, x, strideX, y, strideY, z, strideZ, fcn, clbk\[, thisArg] )
@@ -258,7 +258,7 @@ var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-bas
 import filledarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@deno/mod.js';
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@deno/mod.js';
 import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@deno/mod.js';
-import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@deno/mod.js';
+import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@v0.1.0-deno/mod.js';
 
 function accessor( values, i ) {
     if ( (i%3) === 0 ) {
