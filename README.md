@@ -50,13 +50,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@esm/index.mjs';
+import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@v0.1.0-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@esm/index.mjs';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@v0.1.0-esm/index.mjs';
 ```
 
 #### mapBy2( N, x, strideX, y, strideY, z, strideZ, fcn, clbk\[, thisArg] )
@@ -263,7 +263,7 @@ var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-bas
 import filledarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@esm/index.mjs';
 import filledarrayBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled-by@esm/index.mjs';
 import add from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-ops-add@esm/index.mjs';
-import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@esm/index.mjs';
+import mapBy2 from 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@v0.1.0-esm/index.mjs';
 
 function accessor( values, i ) {
     if ( (i%3) === 0 ) {
