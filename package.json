@@ -44,7 +44,7 @@
     "@stdlib/array-base-setter": "^0.1.0",
     "@stdlib/array-dtype": "^0.1.0",
     "@stdlib/types": "^0.1.0",
-    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.1.0"
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.1.1"
   },
   "devDependencies": {
     "@stdlib/array-complex128": "^0.1.0",
@@ -57,11 +57,11 @@
     "@stdlib/complex-float64": "^0.1.0",
     "@stdlib/complex-imag": "^0.1.0",
     "@stdlib/complex-real": "^0.1.0",
-    "@stdlib/math-base-assert-is-nan": "^0.1.0",
+    "@stdlib/math-base-assert-is-nan": "^0.1.1",
     "@stdlib/math-base-ops-add": "^0.1.0",
     "@stdlib/math-base-ops-cadd": "^0.1.0",
     "@stdlib/math-base-ops-caddf": "^0.1.0",
-    "@stdlib/math-base-special-cidentityf": "^0.1.0",
+    "@stdlib/math-base-special-cidentityf": "^0.1.1",
     "@stdlib/math-base-special-identity": "^0.1.0",
     "@stdlib/math-base-special-pow": "^0.1.0",
     "@stdlib/random-base-discrete-uniform": "^0.1.0",
