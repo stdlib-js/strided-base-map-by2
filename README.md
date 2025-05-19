@@ -43,38 +43,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/strided-base-map-by2
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-mapBy2 = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var mapBy2 = require( 'path/to/vendor/umd/strided-base-map-by2/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/strided-base-map-by2@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.mapBy2;
-})();
-</script>
+var mapBy2 = require( '@stdlib/strided-base-map-by2' );
 ```
 
 #### mapBy2( N, x, strideX, y, strideY, z, strideZ, fcn, clbk\[, thisArg] )
@@ -82,7 +76,7 @@ If no recognized module system is present, access bundle contents via the global
 Applies a binary function to each pair of elements retrieved from strided input arrays according to a callback function and assigns results to a strided output array.
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 
 function accessor( values ) {
     values[ 0 ] *= 2.0;
@@ -121,7 +115,7 @@ The invoked callback function is provided four arguments:
 To set the callback execution context, provide a `thisArg`.
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 
 function accessor( values ) {
     this.count += 1;
@@ -148,7 +142,7 @@ var cnt = context.count;
 The `N` and `stride` parameters determine which elements in the strided arrays are accessed at runtime. For example, to index every other value in `x` and to index the first `N` elements of `y` in reverse order,
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 
 function accessor( values ) {
     values[ 0 ] *= 2.0;
@@ -168,7 +162,7 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 
 function accessor( values ) {
     values[ 0 ] *= 2.0;
@@ -195,7 +189,7 @@ mapBy2( 3, x1, -2, y1, 1, z1, 1, add, accessor );
 Applies a binary function to each pair of elements retrieved from strided input arrays according to a callback function and assigns results to a strided output array using alternative indexing semantics.
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 
 function accessor( values ) {
     values[ 0 ] *= 2.0;
@@ -220,7 +214,7 @@ The function accepts the following additional arguments:
 While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the offset parameters support indexing semantics based on starting indices. For example, to index every other value in `x` starting from the second value and to index the last `N` elements in `y` in reverse order,
 
 ```javascript
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 
 function accessor( values ) {
     values[ 0 ] *= 2.0;
@@ -247,7 +241,7 @@ mapBy2.ndarray( 3, x, 2, 1, y, -1, y.length-1, z, 1, 3, add, accessor );
 -   If a provided callback function does not return any value (or equivalently, explicitly returns `undefined`), the value is **ignored**.
 
     ```javascript
-    var add = require( '@stdlib/math-base-ops-add' );
+    var add = require( '@stdlib/number-float64-base-add' );
 
     function accessor() {
         // No-op...
@@ -271,16 +265,11 @@ mapBy2.ndarray( 3, x, 2, 1, y, -1, y.length-1, z, 1, 3, add, accessor );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {.factory;
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
 var filledarray = require( '@stdlib/array-filled' );
 var filledarrayBy = require( '@stdlib/array-filled-by' );
-var add = require( '@stdlib/math-base-ops-add' );
+var add = require( '@stdlib/number-float64-base-add' );
 var mapBy2 = require( '@stdlib/strided-base-map-by2' );
 
 function accessor( values, i ) {
@@ -302,11 +291,6 @@ console.log( z );
 
 mapBy2.ndarray( x.length, x, 1, 0, y, -1, y.length-1, z, 1, 0, add, accessor );
 console.log( z );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -354,7 +338,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -406,9 +390,9 @@ Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/strided/base/map-by]: https://github.com/stdlib-js/strided-base-map-by/tree/umd
+[@stdlib/strided/base/map-by]: https://github.com/stdlib-js/strided-base-map-by
 
-[@stdlib/strided/base/binary]: https://github.com/stdlib-js/strided-base-binary/tree/umd
+[@stdlib/strided/base/binary]: https://github.com/stdlib-js/strided-base-binary
 
 <!-- </related-links> -->
 
