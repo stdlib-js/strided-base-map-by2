@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-05-09)
+## Unreleased (2026-05-10)
 
 <section class="commits">
 
@@ -12,6 +12,7 @@
 
 <details>
 
+-   [`8f410a3`](https://github.com/stdlib-js/stdlib/commit/8f410a3a753afc40f7e5b6bf0431e8cf70154865) - **test:** use correct `float32` imports in `strided/base` [(#12059)](https://github.com/stdlib-js/stdlib/pull/12059) _(by Karan Anand)_
 -   [`f7304bd`](https://github.com/stdlib-js/stdlib/commit/f7304bd6d7ffd88df213dff3b3ca5d380443dcfc) - **bench:** refactor to use string interpolation in `@stdlib/strided-base` [(#11449)](https://github.com/stdlib-js/stdlib/pull/11449) _(by Uday Kakade, Karan Anand)_
 
 </details>
